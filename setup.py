@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
         name = "pyautoreload",
-        version = "1.1",
+        version = "1.2",
         author = "ruifengyun",
         author_email = "rfyiamcool@163.com",
         description = "dynamic reload module",
