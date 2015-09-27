@@ -2,8 +2,11 @@
 一个可以动态加载重载的模块，可以是对象或者是模块的字符串形式.
 
 TO DO List:
+
 1.  加入目录监控
+
 2.  加入inotify被动扫描
+
 3.  加入信号模式
 
 ###安装:
@@ -12,5 +15,31 @@ TO DO List:
 pip install pyautoreload
 ```
 
+```
+git clone https://github.com/rfyiamcool/pyautoreload.git
+cd pyautoreload
+python setup.py install
+```
 
 
+###使用:
+
+重新加载指定模块
+
+pyautoreload.reload_module(m)
+
+加入模块
+pyautoreload.import_str(m)
+
+路径: /a/b/c
+
+函数: d
+
+pyautoreload.import_str('a.b.c.d')
+
+删除模块
+delete_module(m)
+
+
+重新加载所有模块
+reload_all()

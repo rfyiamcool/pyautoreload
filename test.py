@@ -1,9 +1,9 @@
 # coding:utf-8
 
-import m
-from pyautoreload import *
 import time
 
+import m
+import pyautoreload
 
 if __name__ == '__main__':
     while True:
