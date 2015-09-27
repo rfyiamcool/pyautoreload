@@ -6,14 +6,13 @@ def read(fname):
 
 setup(
         name = "pyautoreload",
-        version = "1.0",
+        version = "1.1",
         author = "ruifengyun",
         author_email = "rfyiamcool@163.com",
         description = "dynamic reload module",
         license = "MIT",
         keywords = ["dynamic reload module","fengyun"],
         url = "https://github.com/rfyiamcool",
-        packages = find_packages(),
         long_description = read('README.md'),
         packages=['pyautoreload'],
         classifiers = [
