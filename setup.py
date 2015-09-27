@@ -15,6 +15,7 @@ setup(
         url = "https://github.com/rfyiamcool",
         long_description = read('README.md'),
         packages=['pyautoreload'],
+        install_requires=['pyinotify'],
         classifiers = [
              'Development Status :: 2 - Pre-Alpha',
              'Intended Audience :: Developers',

@@ -10,6 +10,10 @@ _is_builtin = imp.is_builtin
 #重载
 _reload = reload
 
+#to do
+def watch(addr):
+    pass
+
 def import_str(objpath):
     objlist = objpath.split('.')
     func = objlist[-1]
