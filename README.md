@@ -11,10 +11,11 @@ TO DO List:
 
 ###安装:
 
+pypi安装
 ```
 pip install pyautoreload
 ```
-
+源码安装
 ```
 git clone https://github.com/rfyiamcool/pyautoreload.git
 cd pyautoreload
@@ -22,24 +23,31 @@ python setup.py install
 ```
 
 
-###使用:
+###使用方法:
 
 重新加载指定模块
 
 pyautoreload.reload_module(m)
 
 加入模块
+
 pyautoreload.import_str(m)
 
 路径: /a/b/c
 
 函数: d
 
-pyautoreload.import_str('a.b.c.d')
+pyautoreload.import_module('a.b.c.d')
 
 删除模块
-delete_module(m)
 
+delete_str(m)
 
 重新加载所有模块
+
 reload_all()
+
+重新加载模块,支持类及函数路径模式
+
+reload_str()
+

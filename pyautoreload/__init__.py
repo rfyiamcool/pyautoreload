@@ -24,8 +24,18 @@ def import_str(objpath):
 def delete_module(obj):
     if isinstance(obj,types.ModuleType):
         del obj
-    if isinstance(obj,types.StringType):
-        del sys.modules[obj]
+        return True
+    return False
+
+def delete_str(objpath):
+    objlist = objpath.split('.')
+    func = objlist[-1]
+    module_path = objlist[:-1]
+    del sys.modules[module_path]
+
+def reload_str(obj):
+    delete_str(obj)
+    import_str(obj)
 
 def _get_dependencies(module):
     for variable in vars(module).values():
@@ -35,7 +45,6 @@ def _get_dependencies(module):
             continue
         yield variable
 
-
 def _get_modules_in_order(module, done=set()):
     done = {module.__name__}
     for dependency in _get_dependencies(module):
@@ -44,7 +53,6 @@ def _get_modules_in_order(module, done=set()):
                 yield subdependency
     yield module
 
-
 def reload_module(module):
     for module in _get_modules_in_order(module):
         if module.__name__ in sys.modules:
@@ -52,7 +60,6 @@ def reload_module(module):
                 sys.modules[module.__name__] = _reload(module)
             except ImportError:
                 continue
-
 
 def reload_all():
     """
